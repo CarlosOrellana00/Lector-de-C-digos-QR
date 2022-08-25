@@ -11,7 +11,7 @@ function fetchRequest(file, formData) {
         method: 'POST', body: formData
     }).then(res => res.json()).then(result => {
         result = result[0].symbol[0].data;
-        infoText.innerText = result ? "Cargar Imagen de QE a escanerar" : "No se ha podido Escanear el QR";
+        infoText.innerText = result ? "Cargar Imagen de QE a escanerar" : "No se ha podido Escanear el código QR";
         if(!result) return;
         document.querySelector("textarea").innerText = result;
         form.querySelector("img").src = URL.createObjectURL(file);
